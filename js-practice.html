@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var name = prompt("What is your name?");
+
+        function meet() {
+            alert("Nice to meet you " + name + "!")
+        }
+
+        meet();
+
+        var age = prompt("How old are you?");
+
+        function brain() {
+            if(age >= 25) {
+                alert("Congratulations! You have a fully matured brain!")
+            } else {
+                alert("You've got some maturing to do...")
+            }
+        }
+    
+        brain();
+
+        var kpop = prompt("Do you know BTS?")
+
+        kpop = kpop.toLowerCase();
+
+        function educate() {
+            if(kpop === "yes") {
+                alert("Oh good! You can be my friend then :)")
+            } else {
+                location.replace("https://youtu.be/Y_B-keu9owQ");
+            }
+        }
+
+        educate();
+
+        var bias = prompt("So you know BTS! Who is your bias?");
+
+        bias = bias.toLowerCase();
+
+        function bts() {
+            if(bias === "rm" || bias === "namjoon" || bias === "rap monster") {
+                alert("Hey! " + bias + " is my bias too!");
+                var img = document.createElement('img'); 
+                img.src = "assets/namjoon.gif";
+                document.body.appendChild(img);
+            } else if(bias === "jin") {
+                alert("Worldwide Handsome in the HOUSE!");
+                var img = document.createElement('img'); 
+                img.src = "assets/jin.gif";
+                document.body.appendChild(img);
+            } else if(bias === "yoongi" || bias === "yunki" || bias === "suga") {
+                alert("Ah! So Tongue Technology is your thing?");
+                var img = document.createElement('img'); 
+                img.src = "assets/yoongi.gif";
+                document.body.appendChild(img);
+            } else if(bias === "jhope" || bias === "hobi" || bias === "j-hope" || bias === "hoseok") {
+                alert("SUNSHINE INCOMING!!!");
+                var img = document.createElement('img'); 
+                img.src = "assets/hobi.gif";
+                document.body.appendChild(img);
+            } else if(bias === "jimin") {
+                alert("Awwww our little Mochi is your bias?! (Don't tell anyone, but he's my wrecker :D )");
+                var img = document.createElement('img'); 
+                img.src = "assets/jimin.gif";
+                document.body.appendChild(img);
+            } else if(bias === "taehyung" || bias === "tae" || bias === "v") {
+                alert("UGH He's so pretty and so adorable and all the things, you have good taste!");
+                var img = document.createElement('img'); 
+                img.src = "assets/taehyung.gif";
+                document.body.appendChild(img);
+            } else if(bias === "jungkook" || bias === "jk") {
+                alert("Golden Maknae in the HOUSE!!!");
+                var img = document.createElement('img'); 
+                img.src = "assets/jk.gif";
+                document.body.appendChild(img);
+            }
+        }
+
+        bts();
+
+    // console.log(name);
+    </script>
+</body>
+</html>
