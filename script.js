@@ -1,29 +1,37 @@
 $(document).ready(function() {
 	const startBtn = document.querySelector("#startBtn");
+	const startContainer = document.querySelector("#startContainer");
+	const results = document.querySelector("#resultGif");
+	const end = document.querySelector("#end");
+	const didnt = document.querySelector("#didnt");
 
 	startBtn.addEventListener("click", function() {
-		startBtn.style.display = "none";
-
 		var name = prompt("What is your name?");
 		console.log(name);
 
 		function meet() {
 			alert("Nice to meet you " + name + "!");
+			startContainer.style.display = "none";
 		}
 
 		if (!name) {
 			alert("Please enter a name!");
-			var name = prompt("What is your name?");
 		} else {
 			meet();
 			var age = prompt("How old are you?");
 			console.log(age);
 
 			function brain() {
-				if (age >= 25) {
+				if (age >= 25 && age <= 27) {
 					alert("Congratulations! You have a fully developed brain!");
-				} else {
-					alert("You've got some maturing to do...");
+				} else if (age >= 21 && age <= 24) {
+					alert(
+						"An adult! But you're not 25 yet... you've got some maturing to do..."
+					);
+				} else if (age >= 28) {
+					alert("A Noona! Hey, me too!");
+				} else if (age < 21) {
+					alert("Awww! A little one, how cute!")
 				}
 			}
 
@@ -51,50 +59,87 @@ $(document).ready(function() {
 				bias = bias.toLowerCase();
 
 				function members() {
-					if (bias === "rm" || bias === "namjoon" || bias === "rap monster") {
+					if (
+						bias === "rm" ||
+						bias === "namjoon" ||
+						bias === "rap monster" ||
+						bias === "joon" ||
+						bias === "joonie" ||
+						bias === "kim namjoon"
+					) {
 						alert("Hey! " + bias + " is my bias too!");
 						var img = document.createElement("img");
 						img.src = "assets/namjoon.gif";
-						document.body.appendChild(img);
-					} else if (bias === "jin") {
+						results.appendChild(img);
+					} else if (
+						bias === "jin" ||
+						bias === "seokjin" ||
+						bias === "kim seokjin"
+					) {
 						alert("Worldwide Handsome in the HOUSE!");
 						var img = document.createElement("img");
 						img.src = "assets/jin.gif";
-						document.body.appendChild(img);
-					} else if (bias === "yoongi" || bias === "yunki" || bias === "suga") {
+						results.appendChild(img);
+					} else if (
+						bias === "yoongi" ||
+						bias === "yunki" ||
+						bias === "suga" ||
+						bias === "agust d"
+					) {
 						alert("Ah! So Tongue Technology is your thing?");
 						var img = document.createElement("img");
 						img.src = "assets/yoongi.gif";
-						document.body.appendChild(img);
+						results.appendChild(img);
 					} else if (
 						bias === "jhope" ||
 						bias === "hobi" ||
 						bias === "j-hope" ||
-						bias === "hoseok"
+						bias === "hoseok" ||
+						bias === "jung hoseok"
 					) {
 						alert("SUNSHINE INCOMING!!!");
 						var img = document.createElement("img");
 						img.src = "assets/hobi.gif";
-						document.body.appendChild(img);
-					} else if (bias === "jimin") {
+						results.appendChild(img);
+					} else if (
+						bias === "jimin" ||
+						bias === "park jimin" ||
+						bias === "chimchim"
+					) {
 						alert(
 							"Awwww our little Mochi is your bias?! (Don't tell anyone, but he's my wrecker :D )"
 						);
 						var img = document.createElement("img");
 						img.src = "assets/jimin.gif";
-						document.body.appendChild(img);
-					} else if (bias === "taehyung" || bias === "tae" || bias === "v") {
+						results.appendChild(img);
+					} else if (
+						bias === "taehyung" ||
+						bias === "tae" ||
+						bias === "v" ||
+						bias === "kim taehyung" ||
+						bias === "taetae"
+					) {
 						alert(
 							"UGH He's so pretty and so adorable and all the things, you have good taste!"
 						);
 						var img = document.createElement("img");
 						img.src = "assets/taehyung.gif";
-						document.body.appendChild(img);
-					} else if (bias === "jungkook" || bias === "jk") {
+						results.appendChild(img);
+					} else if (
+						bias === "jungkook" ||
+						bias === "jk" ||
+						bias === "kookie" ||
+						bias === "jeon jungkook"
+					) {
 						alert("Golden Maknae in the HOUSE!!!");
 						var img = document.createElement("img");
 						img.src = "assets/jk.gif";
-						document.body.appendChild(img);
+						results.appendChild(img);
+					} else if (bias === "none" || !bias) {
+						alert("No bias? That's okay! Here's some OT7 for you");
+						var img = document.createElement("img");
+						img.src = "assets/ot7.gif";
+						results.appendChild(img);
 					}
 				}
 
@@ -103,16 +148,16 @@ $(document).ready(function() {
 				var h1 = document.createElement("h1");
 				h1.textContent =
 					"You made it through all the questions! Congratulations!";
-				document.body.appendChild(h1);
+				end.appendChild(h1);
 
 				var h2 = document.createElement("h2");
 				h2.textContent = "As a present, here's a gif of your bias";
-				document.body.appendChild(h2);
+				end.appendChild(h2);
 
 				var p = document.createElement("p");
 				p.textContent =
-					"Didn't get a gif of your bias? If you typed in something that didn't make sense that will happen... if you think you deserve a gif, refresh the page and try typing in your bias name a little more normally?";
-				document.body.appendChild(p);
+					"Didn't get a gif of your bias? If you typed in something that didn't make sense that can happen... if you think you deserve a gif, refresh the page and try typing your bias' name a little more...  conventionally?";
+				didnt.appendChild(p);
 			}
 		}
 	});
