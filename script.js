@@ -150,13 +150,13 @@ $(document).ready(function() {
 					"You made it through all the questions! Congratulations!";
 				end.appendChild(h1);
 
-				var h2 = document.createElement("h2");
-				h2.textContent = "As a present, here's a gif of your bias";
-				end.appendChild(h2);
+				var h3 = document.createElement("h3");
+				h3.textContent = "As a present, here's a gif of your bias";
+				end.appendChild(h3);
 
 				var p = document.createElement("p");
 				p.textContent =
-					"Didn't get a gif of your bias? If you typed in something that didn't make sense that can happen... if you think you deserve a gif, refresh the page and try typing your bias' name a little more...  conventionally?";
+					"Didn't get a gif? If you typed in something that didn't make sense that can happen... if you think you deserve a gif, refresh the page and try typing your bias' name a little more...  conventionally?";
 				didnt.appendChild(p);
 			}
 		}
